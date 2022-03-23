@@ -1,0 +1,54 @@
+
+version: 2
+
+models:
+  - name: cumulative_orders_by_date
+    description: "cummulative sums by date for the orders table"
+    columns:
+      - name: o_orderkey
+        tests:
+          - unique
+          - not_null
+  - name: nationbuilding
+    description: "nation"
+    columns:
+      - name: c_custkey
+        tests:
+          - unique
+          - not_null
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+  - name: snowflake_customer_purchase
+    description: "total purchases for each customer"
+    columns:
+      - name: c_custkey
+        tests:
+          - unique
+          - not_null 	
+  - name: dates
+  - name: assignment2
+  - name: playing_with_tests
+    columns:
+      - name: c_custkey
+        tests:
+          - not_null
+          - unique
+      - name: c_mktsegment
+        tests:
+          - accepted_values:
+              values: ['BUILDING', 'AUTOMOBILE', 'MACHINERY', 'HOUSEHOLD', 'FURNITURE']
